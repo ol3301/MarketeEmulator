@@ -1,0 +1,38 @@
+@UsersApi_HostAddress = http://localhost:8001/api
+
+GET {{UsersApi_HostAddress}}/users/1
+Accept: application/json
+
+###
+
+POST {{UsersApi_HostAddress}}/users/
+Content-Type: application/json
+
+{
+  "Name": "test4",
+  "Email": "test4@test4.com"
+}
+
+###
+
+POST {{UsersApi_HostAddress}}/users/1/subscription
+Content-Type: application/json
+
+{
+  "StartDate": "2023-10-01T00:00:00",
+  "EndDate": "2025-10-01T00:00:00",
+  "SubscriptionTypeId": 2
+}
+
+###
+
+PUT {{UsersApi_HostAddress}}/users/2/subscription
+Content-Type: application/json
+
+{
+  "StartDate": "2023-10-01T00:00:00Z",
+  "EndDate": "2025-10-01T00:00:00Z",
+  "SubscriptionTypeId": 2
+}
+
+###

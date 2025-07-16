@@ -1,0 +1,33 @@
+@ProjectsApi_HostAddress = http://localhost:8002/api
+
+GET {{ProjectsApi_HostAddress}}/popularIndicators/2
+Accept: application/json
+
+###
+
+
+GET {{ProjectsApi_HostAddress}}/usersettings/
+Accept: application/json
+
+###
+
+PUT {{ProjectsApi_HostAddress}}/projects/1
+Content-Type: application/json
+
+{
+"Name": "New Project111",
+"Charts": [
+    {
+        "Symbol": "New symbol",
+        "Timeframe": "new timeframe",
+        "Indicators": [
+            {
+            "Name": "New indicator123123213123123",
+            "Parameters": "new parameters"
+            }
+        ]
+    }
+  ]
+}
+
+###

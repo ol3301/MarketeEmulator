@@ -1,0 +1,60 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    networks:
+      - market_emulator_network
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 123456789
+    restart: unless-stopped
+    networks:
+      - market_emulator_network
+  usersapi:
+    build:
+      context: .
+      dockerfile: UsersApi/Dockerfile
+      network: host
+    container_name: usersapi
+    ports:
+      - "8001:8001"
+    depends_on:
+      - mongodb
+      - postgres
+    environment:
+      ConnectionStrings__UsersDatabase: "Host=postgres;Port=5432;Database=MarketEmulator;Username=postgres;Password=123456789"
+      ASPNETCORE_URLS: "http://0.0.0.0:8001"
+    restart: unless-stopped
+    networks:
+      - market_emulator_network
+  projectsapi:
+    build:
+      context: .
+      dockerfile: ProjectsApi/Dockerfile
+      network: host
+    container_name: projectsapi
+    ports:
+      - "8002:8002"
+    depends_on:
+      - mongodb
+      - postgres
+      - usersapi
+    environment:
+      ConnectionStrings__UsersDatabase: "Host=postgres;Port=5432;Database=MarketEmulator;Username=postgres;Password=123456789"
+      ProjectsDatabase__ConnectionString: "mongodb://mongodb:27017"
+      ASPNETCORE_URLS: "http://0.0.0.0:8002"
+    restart: unless-stopped
+    networks:
+      - market_emulator_network
+
+
+networks:
+  market_emulator_network:
+    driver: bridge
