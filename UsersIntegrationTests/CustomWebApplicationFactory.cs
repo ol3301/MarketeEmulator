@@ -22,10 +22,11 @@ public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProg
                 options.UseInMemoryDatabase("TestDb");
             });
 
-            var sp = services.BuildServiceProvider();
-            using var scope = sp.CreateScope();
-            var db = scope.ServiceProvider.GetRequiredService<UsersDbContext>();
-            db.Database.EnsureCreated();
+            using var db = services.BuildServiceProvider()
+                .CreateScope()
+                .ServiceProvider
+                .GetRequiredService<UsersDbContext>();
+            
             db.Users.Add(new UserEntity { Id = 1, Name = "TestUser", Email = "test@test.com"});
             db.SaveChanges();
         });
