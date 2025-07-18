@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
+using ProjectsApi.Internal.Application;
 using ProjectsApi.Routes;
-using ProjectsApplication;
 using UsersDatabase;
 
 var builder = WebApplication.CreateBuilder(args);

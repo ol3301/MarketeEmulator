@@ -7,11 +7,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Directory.Build.props", "Directory.Build.props"]
 COPY ["ProjectsApi/ProjectsApi.csproj", "ProjectsApi/"]
-COPY ["ProjectsDomain/ProjectsDomain.csproj", "ProjectsDomain/"]
-COPY ["ProjectsApplication/ProjectsApplication.csproj", "ProjectsApplication/"]
-COPY ["SharedDomain/SharedDomain.csproj", "SharedDomain/"]
+COPY ["Core/Core.csproj", "Core/"]
 COPY ["UsersDatabase/UsersDatabase.csproj", "UsersDatabase/"]
-COPY ["UsersDomain/UsersDomain.csproj", "UsersDomain/"]
 RUN dotnet restore "ProjectsApi/ProjectsApi.csproj"
 COPY . .
 WORKDIR "/src/ProjectsApi"

@@ -1,4 +1,4 @@
-namespace ProjectsDomain;
+namespace ProjectsApi.Internal;
 
 public class UserSettings
 {

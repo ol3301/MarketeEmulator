@@ -1,8 +1,7 @@
-using UsersApplication.Models;
+using UsersApi.Internal.Application.Models;
 using UsersDatabase;
-using UsersDomain;
 
-namespace UsersApplication;
+namespace UsersApi.Internal.Application;
 
 public class UserCreatorAppService(UsersDbContext context)
 {

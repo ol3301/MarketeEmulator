@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using UsersDatabase.Configuration;
-using UsersDomain;
 
 namespace UsersDatabase;
 

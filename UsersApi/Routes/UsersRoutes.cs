@@ -1,5 +1,5 @@
-using UsersApplication;
-using UsersApplication.Models;
+using UsersApi.Internal.Application;
+using UsersApi.Internal.Application.Models;
 
 namespace UsersApi.Routes;
 

@@ -1,10 +1,9 @@
+using Core;
 using Microsoft.EntityFrameworkCore;
-using SharedDomain;
-using UsersApplication.Models;
+using UsersApi.Internal.Application.Models;
 using UsersDatabase;
-using UsersDomain;
 
-namespace UsersApplication;
+namespace UsersApi.Internal.Application;
 
 public class UserSubscriptionService(UsersDbContext context)
 {

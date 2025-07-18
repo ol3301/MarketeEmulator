@@ -1,7 +1,7 @@
 using MongoDB.Driver;
-using ProjectsApplication;
-using ProjectsApplication.Models;
-using ProjectsDomain;
+using ProjectsApi.Internal;
+using ProjectsApi.Internal.Application;
+using ProjectsApi.Internal.Application.Models;
 
 namespace ProjectsApi.Routes;
 

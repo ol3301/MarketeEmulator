@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using SharedDomain;
+using Core;
 
-namespace UsersApplication.Models;
+namespace UsersApi.Internal.Application.Models;
 
-public class UserSubscribeRequestModel
+public class UserUpdateSubscriptionRequestModel
 {
     [Required]
     public DateTime StartDate { get; set; }

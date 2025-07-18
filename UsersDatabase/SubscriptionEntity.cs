@@ -1,6 +1,6 @@
-using SharedDomain;
+using Core;
 
-namespace UsersDomain;
+namespace UsersDatabase;
 
 public class SubscriptionEntity
 {

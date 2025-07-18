@@ -1,4 +1,4 @@
-namespace UsersDomain;
+namespace UsersDatabase;
 
 public class UserEntity
 {

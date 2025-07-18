@@ -1,8 +1,7 @@
-using SharedDomain;
-using UsersApplication;
-using UsersApplication.Models;
+using Core;
+using UsersApi.Internal.Application;
+using UsersApi.Internal.Application.Models;
 using UsersDatabase;
-using UsersDomain;
 using Xunit;
 
 namespace UsersTests;

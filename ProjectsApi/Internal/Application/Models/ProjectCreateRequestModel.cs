@@ -1,4 +1,4 @@
-namespace ProjectsApplication.Models;
+namespace ProjectsApi.Internal.Application.Models;
 
 public class ProjectCreateRequestModel
 {

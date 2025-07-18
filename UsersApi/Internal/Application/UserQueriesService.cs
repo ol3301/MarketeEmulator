@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using UsersApplication.Models;
+using UsersApi.Internal.Application.Models;
 using UsersDatabase;
 
-namespace UsersApplication;
+namespace UsersApi.Internal.Application;
 
 public class UserQueriesService(UsersDbContext context)
 {

@@ -1,11 +1,10 @@
+using Core;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
-using ProjectsApplication.Models;
-using ProjectsDomain;
-using SharedDomain;
+using ProjectsApi.Internal.Application.Models;
 using UsersDatabase;
 
-namespace ProjectsApplication;
+namespace ProjectsApi.Internal.Application;
 
 public class ProjectCreatorService(IMongoClient client, UsersDbContext context)
 {

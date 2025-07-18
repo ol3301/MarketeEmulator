@@ -8,9 +8,7 @@ WORKDIR src
 COPY ["Directory.Build.props", "Directory.Build.props"]
 COPY ["UsersApi/UsersApi.csproj", "UsersApi/"]
 COPY ["UsersDatabase/UsersDatabase.csproj", "UsersDatabase/"]
-COPY ["UsersDomain/UsersDomain.csproj", "UsersDomain/"]
-COPY ["SharedDomain/SharedDomain.csproj", "SharedDomain/"]
-COPY ["UsersApplication/UsersApplication.csproj", "UsersApplication/"]
+COPY ["Core/Core.csproj", "Core/"]
 RUN dotnet restore "UsersApi/UsersApi.csproj"
 COPY . .
 WORKDIR "/src/UsersApi"

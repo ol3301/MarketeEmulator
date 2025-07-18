@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using UsersApi.Internal.Application;
 using UsersApi.Routes;
-using UsersApplication;
 using UsersDatabase;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,4 +37,7 @@ else
 }
 
 app.Run();
-public partial class Program { }//for integration tests
+namespace UsersApi
+{
+    public partial class Program { }
+}//for integration tests

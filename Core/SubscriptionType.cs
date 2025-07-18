@@ -1,4 +1,4 @@
-namespace SharedDomain;
+namespace Core;
 
 public enum SubscriptionType
 {

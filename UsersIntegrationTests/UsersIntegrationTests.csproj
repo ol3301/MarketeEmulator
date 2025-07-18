@@ -7,7 +7,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.18" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.4" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
         <PackageReference Include="xunit" Version="2.4.2"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -22,7 +22,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\UsersApi\UsersApi.csproj" />
-      <ProjectReference Include="..\UsersDatabase\UsersDatabase.csproj" />
     </ItemGroup>
 
 </Project>

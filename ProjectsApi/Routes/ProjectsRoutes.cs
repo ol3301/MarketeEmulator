@@ -1,5 +1,5 @@
-using ProjectsApplication;
-using ProjectsApplication.Models;
+using ProjectsApi.Internal.Application;
+using ProjectsApi.Internal.Application.Models;
 
 namespace ProjectsApi.Routes;
 

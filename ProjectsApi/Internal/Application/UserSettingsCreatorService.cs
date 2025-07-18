@@ -1,8 +1,7 @@
 using MongoDB.Driver;
-using ProjectsApplication.Models;
-using ProjectsDomain;
+using ProjectsApi.Internal.Application.Models;
 
-namespace ProjectsApplication;
+namespace ProjectsApi.Internal.Application;
 
 public class UserSettingsCreatorService(IMongoClient client)
 {

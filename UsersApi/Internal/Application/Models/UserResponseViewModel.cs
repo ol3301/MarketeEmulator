@@ -1,4 +1,4 @@
-namespace UsersApplication.Models;
+namespace UsersApi.Internal.Application.Models;
 
 public class UserResponseViewModel
 {

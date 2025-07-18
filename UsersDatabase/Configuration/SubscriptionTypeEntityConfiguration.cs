@@ -1,7 +1,6 @@
+using Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SharedDomain;
-using UsersDomain;
 
 namespace UsersDatabase.Configuration;
 
