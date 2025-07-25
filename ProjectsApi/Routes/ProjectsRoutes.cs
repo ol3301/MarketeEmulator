@@ -1,5 +1,5 @@
-using ProjectsApplication;
-using ProjectsApplication.Models;
+using UseCases.Dtos;
+using UseCases.Projects;
 
 namespace ProjectsApi.Routes;
 
@@ -12,7 +12,7 @@ public static class ProjectsRoutes
             return Results.Ok(await queriesService.GetMostUsedIndecatorsAsync(subscriptionType));
         });
 
-        builder.MapPut("/projects/{userId:int}", async (int userId, ProjectCreateRequestModel model, ProjectCreatorService creatorService) =>
+        builder.MapPut("/projects/{userId:int}", async (int userId, ProjectCreateRequestDto model, ProjectCreatorService creatorService) =>
         {
             await creatorService.CreateAsync(userId, model);
             return Results.Ok();

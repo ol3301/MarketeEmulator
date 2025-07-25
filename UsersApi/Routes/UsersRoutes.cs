@@ -1,5 +1,5 @@
-using UsersApplication;
-using UsersApplication.Models;
+using UseCases.Dtos;
+using UseCases.Users;
 
 namespace UsersApi.Routes;
 
@@ -15,21 +15,21 @@ public static class UsersRoutes
                 : Results.NoContent();
         });
         
-        group.MapPost("/", async (UserCreateRequestModel model, UserCreatorAppService creatorService) =>
+        group.MapPost("/", async (UserCreateRequestDto model, UserCreatorAppService creatorService) =>
         {
             var id = await creatorService.CreateAsync(model);
             
             return Results.Created($"/users/{id}", id);
         });
 
-        group.MapPost("/{id:int}/subscription", async (int id, UserSubscribeRequestModel model, UserSubscriptionService subscriptionService) =>
+        group.MapPost("/{id:int}/subscription", async (int id, UserSubscribeRequestDto model, UserSubscriptionService subscriptionService) =>
         {
             await subscriptionService.SubscribeAsync(id, model);
 
             return Results.Ok();
         });
         
-        group.MapPut("/{id:int}/subscription", async (int id, UserUpdateSubscriptionRequestModel model, UserSubscriptionService subscriptionService) =>
+        group.MapPut("/{id:int}/subscription", async (int id, UserUpdateSubscriptionRequestDto model, UserSubscriptionService subscriptionService) =>
         {
             await subscriptionService.UpdateSubscriptionAsync(id, model);
 

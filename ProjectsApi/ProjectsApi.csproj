@@ -9,10 +9,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\ProjectsApplication\ProjectsApplication.csproj" />
-      <ProjectReference Include="..\ProjectsDomain\ProjectsDomain.csproj" />
-      <ProjectReference Include="..\SharedDomain\SharedDomain.csproj" />
-      <ProjectReference Include="..\UsersDatabase\UsersDatabase.csproj" />
+      <ProjectReference Include="..\Mongo\Mongo.csproj" />
+      <ProjectReference Include="..\Postgres\Postgres.csproj" />
+      <ProjectReference Include="..\UseCases\UseCases.csproj" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="..\.dockerignore">

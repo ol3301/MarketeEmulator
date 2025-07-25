@@ -1,8 +1,8 @@
-using SharedDomain;
-using UsersApplication;
-using UsersApplication.Models;
-using UsersDatabase;
-using UsersDomain;
+using Domain;
+using Domain.Entities;
+using Postgres;
+using UseCases.Dtos;
+using UseCases.Users;
 using Xunit;
 
 namespace UsersTests;
@@ -13,7 +13,7 @@ public class UserSubscriptionServiceTests
     public async Task SubscribeAsyncUserNotFoundTest(UserSubscriptionService sut)
     {
         var userId = 1;
-        var ex = await Assert.ThrowsAsync<DomainException>(async () => await sut.SubscribeAsync(userId, new UserSubscribeRequestModel()));
+        var ex = await Assert.ThrowsAsync<DomainException>(async () => await sut.SubscribeAsync(userId, new UserSubscribeRequestDto()));
         
         Assert.Equal($"User not found. {userId}", ex.Message);
     }
@@ -26,13 +26,13 @@ public class UserSubscriptionServiceTests
         context.Users.Add(entity);
         context.SaveChanges();
         
-        var ex = await Assert.ThrowsAsync<DomainException>(async () => await sut.SubscribeAsync(1, new UserSubscribeRequestModel()));
+        var ex = await Assert.ThrowsAsync<DomainException>(async () => await sut.SubscribeAsync(1, new UserSubscribeRequestDto()));
         
         Assert.Equal($"User already has an active subscription.", ex.Message);
     }
     
     [Theory, AutoMoqData]
-    public async Task SubscribeAsyncSuccessTest(UserSubscriptionService sut, UsersDbContext context, UserEntity entity, UserSubscribeRequestModel model)
+    public async Task SubscribeAsyncSuccessTest(UserSubscriptionService sut, UsersDbContext context, UserEntity entity, UserSubscribeRequestDto model)
     {
         entity.Id = 1;
         entity.Subscription = null;

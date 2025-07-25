@@ -1,18 +1,19 @@
 using Microsoft.EntityFrameworkCore;
+using Mongo;
 using MongoDB.Driver;
+using Postgres;
 using ProjectsApi.Routes;
-using ProjectsApplication;
-using UsersDatabase;
+using UseCases.Projects;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IMongoClient>(x =>
+builder.Services.AddSingleton<MongoDbContext>(x =>
 {
     var connectionString = builder.Configuration.GetSection("ProjectsDatabase")["ConnectionString"];
-    return new MongoClient(connectionString);
+    return new MongoDbContext(new MongoClient(connectionString));
 });
 builder.Services.AddDbContext<UsersDbContext>(options =>
 {

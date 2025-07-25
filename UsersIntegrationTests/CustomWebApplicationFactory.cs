@@ -1,10 +1,10 @@
+using Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using UsersDatabase;
-using UsersDomain;
+using Postgres;
 
 namespace UsersIntegrationTests;
 

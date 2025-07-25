@@ -54,7 +54,6 @@ services:
     networks:
       - market_emulator_network
 
-
 networks:
   market_emulator_network:
     driver: bridge
